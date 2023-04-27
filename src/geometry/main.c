@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <string.h>
 
-#include <libgeometry/circle.h>
+#include <circle.h>
 
 int main()
 {
