@@ -1,26 +1,31 @@
 #include <stdio.h>
-#include <libgeometry/geometry.h>
-#include <libgeometry/libcalculate.h>
+#include <stdlib.h>
+#include <string.h>
+
+#include <libgeometry/circle.h>
 
 int main()
 {
-    double ar, perim;
-    char figure[64];
+	FILE* file;
+	file = fopen("./data.txt", "r");
+	if (file == NULL) 
+	{
+		printf("File not found\n");
+		exit(0);
+	}
+	char str1[100];
+	int countObj = 0;
 
-    while (1) 
-    {
-        fgets(figure, 64, stdin);
-        if (figure[0] == 'q') 
-        {
-            return 0;
-        }
-        if (circle(figure) == 0) 
-        {
-            perim = perimeter(figure);
-            ar = area(figure);
-
-            printf("\nArea : %f\n Perimeter :%f\n", ar, perim);
-        }
-    }
-    return 0;
+	while (fgets(str1, 99, file)) 
+	{
+		countObj++;
+		str_to_lower(str1);
+		int v = print_errors(str1, countObj);
+		for (; v < 1; v++) 
+		{
+			calc_per_and_area(str1);
+		}
+	}
+	fclose(file);
+	return 0;
 }
