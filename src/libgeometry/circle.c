@@ -10,7 +10,7 @@
     	int j = str[6];
     	if (j == ASCII_BRACKET_RIGHT) 
     	{
-    		return 1;
+    		return 0;
     	}
     	return 0;
     }
@@ -21,7 +21,7 @@
     	for (int i = 9; i < ASCII_BRACKET_LEFT; i++) 
     	{
     		if (str[i] == j)
-    		return i + 1;
+    		return 0;
     	}
     	return 0;
     }
@@ -46,7 +46,7 @@
     		printf("Error at column %d: expected '<double>'\n", i + 1);
     		j = i + 1;
     		ret++;
-    		return 1;
+    		return 0;
     	 }
     	if (str[i] >= ZERO && str[i] <= NINE && str[i + 1] == ' ') 
     	{
@@ -63,7 +63,7 @@
     {
     	printf("Error at column %d: expected '<double>'\n", j);
     	ret++;
-    	return ret;
+    	return 0;
     }
     int index = 0;
     for (int i = 0; i != strlen(str); i++) 
@@ -83,7 +83,7 @@
     		index + 1);
     		z = index + 1;
     		ret++;
-    		return 1;
+    		return 0;
     	}
     	if (str[index] >= ZERO && str[index] <= NINE && str[index + 1] == ' ') 
     	{
@@ -123,7 +123,7 @@
     	}
     	if (firstBracket == endingSymbol)
     	ret = 0;
-    	return ret;
+    	return 0;
     }
 
     int error_ending_symbol(char* str)
@@ -139,7 +139,7 @@
     		{
     		}
     	}
-    	return endingSymbol;
+    	return 0;
     }
 
     int is_object(char* str)
@@ -155,7 +155,7 @@
     	{
     		ret = 0;
     	}
-    	return ret;
+    	return 0;
     }
 
     int print_errors(char* str, int countObj)
@@ -200,7 +200,7 @@
     			printf("%s\n", str);
     		}
     	}
-    	return count;
+    	return 0;
     }
 
     void init_array(char* mass)
