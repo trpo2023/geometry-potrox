@@ -2,13 +2,15 @@ name: Build
 
 on: push
 
-jobs:
-	build:
-		runs-on: ubuntu-20.04
+	jobs:
+		build:
+			runs-on: ubuntu-20.04
 
-		steps:
-			- name: Build It!
+			steps:
+			- uses: actions/checkout@v2
+
+			- name: Build application
 			run: make
 
-			- name: Build It Test!
+			- name: Build tests
 			run: make test
