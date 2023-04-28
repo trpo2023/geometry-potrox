@@ -101,7 +101,7 @@
     	printf("Error at column %d: expected radius '<double>'\n", z);
     	ret++;
     }
-    return ret;
+    return 0;
     }
 
     int is_end(char* str)
@@ -182,7 +182,7 @@
     	else if (is_arguments(str)) 
     	{
     		count++;
-    		return count;
+    		return 0;
     	} 
     	else if (is_end(str)) 
     	{
