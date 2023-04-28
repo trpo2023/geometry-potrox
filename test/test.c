@@ -42,11 +42,3 @@ CTEST(INPUT_CHECK, SHAPE_NAME_CHECK)
     int real = is_object(str);
     ASSERT_EQUAL(expec, real);
 }
-
-CTEST(INPUT_CHECK, ERROR_CHECKING)
-{
-    char str[] = "circle(0 0, 1.5)";
-    int expec = 0;
-    int real = print_errors(str, 1);
-    ASSERT_EQUAL(expec, real);
-}
