@@ -11,7 +11,7 @@ int main()
 	if (file == NULL) 
 	{
 		printf("File not found\n");
-		exit(0);
+		return 5;
 	}
 	char str1[100];
 	int countObj = 0;
@@ -27,5 +27,5 @@ int main()
 		}
 	}
 	fclose(file);
-	return 0;
+	return 1;
 }
