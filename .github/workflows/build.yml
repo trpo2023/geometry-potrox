@@ -10,7 +10,7 @@ on: push
 			- uses: actions/checkout@v2
 
 			- name: Build application
-			run: make
+			run: make all
 
 			- name: Build tests
 			run: make test
